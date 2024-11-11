@@ -43,7 +43,7 @@ export default function License() {
   return (
     <div className="">
       <main className="">
-        <h1 className="text-[80px] text-white mb-8">About this website</h1>
+        <h1 className="text-[80px] mb-8">About this website</h1>
         {renderQuestions()}
         <p className="text-[#808080] font-bold">
           WHERE CAN I FIND THE DESIGN GUIDE?
