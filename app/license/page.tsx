@@ -60,7 +60,7 @@ export default function License() {
         </p>
 
         <span className="text-[#808080]">
-          This design is called Gheist, was made by Eihab Khan and is licensed
+          This design is called Geist, was made by Eihab Khan and is licensed
           under{" "}
         </span>
 
