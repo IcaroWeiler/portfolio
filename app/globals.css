@@ -7,6 +7,10 @@
   --title: white;
   --subtitle: #c5c5c5;
   --headerBg: #18181d;
+  --primaryButtonBg: #131313;
+  --secondaryButtonBg: #181818;
+  --primaryButtonText: #ffffff;
+  --secondaryButtonText: #808080;
 }
 
 .light {
@@ -14,6 +18,10 @@
   --title: #181818;
   --subtitle: #181818;
   --headerBg: white;
+  --primaryButtonBg: #131313;
+  --secondaryButtonBg: #F3F3F3;
+  --primaryButtonText: #ffffff;
+  --secondaryButtonText: #181818;
 }
 
 body {
@@ -23,11 +31,23 @@ body {
 }
 
 h1 {
-  color: var(--title)
+  color: var(--title);
+  font-size: 80px;
+  margin-bottom: 32px
 }
 
 header {
   background-color: var(--headerBg);
+}
+
+button, .primary {
+  background: var(--primaryButtonBg);
+  color: var(--primaryButtonText)
+}
+
+button, .secondary {
+  background: var(--secondaryButtonBg);
+  color: var(--secondaryButtonText);
 }
 
 .subtitle {
@@ -36,5 +56,30 @@ header {
 
 .icon {
   color: var(--title)
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s forwards;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animate-delay-1000 {
+  animation-delay: 1s;
+}
+
+.animate-delay-1500 {
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 

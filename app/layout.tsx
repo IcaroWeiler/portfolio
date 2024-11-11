@@ -26,16 +26,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const [darkMode] = useAtom(darkModeAtom);
-  const [darkModeString, setDarkModeString] = useState<string>();
-
-  useEffect(() => {
-    darkMode ? setDarkModeString("dark") : setDarkModeString("light");
-  }, [darkMode]);
 
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${darkModeString} antialiased max-w-[1100px] mx-auto`}
+        className={`${geistSans.variable} ${geistMono.variable} ${
+          darkMode ? "dark" : "light"
+        } antialiased max-w-[1100px] mx-auto`}
       >
         <CircleGradient />
 
