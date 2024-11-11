@@ -26,6 +26,11 @@ export default function Header() {
       href: "contact",
       label: "Contact",
     },
+
+    {
+      href: "license",
+      label: "This website",
+    },
   ];
 
   const iconStyle = {
@@ -44,7 +49,7 @@ export default function Header() {
 
   return (
     <header>
-      <div className="bg-[#18181D] h-[60px] mt-8 text-white rounded p-4 opacity-50 ">
+      <div className="bg-[#18181D] h-[60px] mt-8 mb-16 text-white rounded p-4 opacity-50 ">
         <div className="flex items-center opacity-100 justify-between">
           <div className="flex">
             <Link href="/">
