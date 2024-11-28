@@ -1,13 +1,10 @@
 "use client";
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header/header";
 import CircleGradient from "@/components/CircleGradient/circle";
 import { useAtom } from "jotai";
 import { darkModeAtom } from "@/stores/darkMode";
-import { useEffect, useState } from "react";
-import { setDefaultResultOrder } from "dns";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

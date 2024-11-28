@@ -1,12 +1,11 @@
 "use client";
 import Button from "@/components/Button/button";
-import Image from "next/image";
 
 export default function Home() {
   return (
     <main className="">
       <div className="title fade-in animate-delay-500">
-        <h1 className="inline text-[#808080]">I'm </h1>
+        <h1 className="inline text-[#808080]">I&apos;m </h1>
 
         <h1 className="inline">Icaro</h1>
       </div>

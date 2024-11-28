@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 import { FaHouse } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
@@ -18,22 +17,22 @@ export default function Header() {
     },
 
     {
-      href: "projects",
+      href: "/projects",
       label: "Projects",
     },
 
     {
-      href: "techStack",
+      href: "/techStack",
       label: "Tech Stack",
     },
 
     {
-      href: "contact",
+      href: "/contact",
       label: "Contact",
     },
 
     {
-      href: "license",
+      href: "/license",
       label: "This website",
     },
   ];

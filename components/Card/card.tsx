@@ -1,5 +1,4 @@
 "use client";
-import Button from "@/components/Button/button";
 import Image from "next/image";
 
 export interface CardProps {
