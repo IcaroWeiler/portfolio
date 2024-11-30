@@ -15,11 +15,35 @@ export async function POST(req: Request) {
     });
 
     if (error) {
-      return Response.json({ error }, { status: 500 });
+      return new Response(JSON.stringify({ error }), {
+        status: 500,
+        headers: corsHeaders(),
+      });
     }
 
-    return Response.json(data);
+    return new Response(JSON.stringify(data), {
+      status: 200,
+      headers: corsHeaders(),
+    });
   } catch (error) {
-    return Response.json({ error: String(error) }, { status: 500 });
+    return new Response(JSON.stringify({ error: String(error) }), {
+      status: 500,
+      headers: corsHeaders(),
+    });
   }
+}
+
+// Middleware para lidar com CORS
+export function OPTIONS() {
+  return new Response(null, {
+    headers: corsHeaders(),
+  });
+}
+
+function corsHeaders() {
+  return {
+    "Access-Control-Allow-Origin": "*", // Substitua '*' pelo domínio permitido, se necessário
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "Content-Type",
+  };
 }
