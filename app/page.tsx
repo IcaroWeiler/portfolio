@@ -2,6 +2,13 @@
 import Button from "@/components/Button/button";
 
 export default function Home() {
+  const seeResume = () => {
+    window.open(
+      "https://drive.google.com/file/d/1GSbvzkFiF1YQtrdxOwcVEIu4o5VF23qQ/view?usp=drive_link",
+      "_newtab"
+    );
+  };
+
   return (
     <main className="">
       <div className="title fade-in animate-delay-500">
@@ -19,7 +26,7 @@ export default function Home() {
       </div>
 
       <div className="flex gap-4 fade-in animate-delay-1500">
-        <Button type="primary" onClick={() => console.log("a")}>
+        <Button type="primary" onClick={() => seeResume()}>
           See my resume
         </Button>
         <Button type="primary" onClick={() => console.log("b")}>

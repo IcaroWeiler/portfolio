@@ -13,6 +13,7 @@
   --secondaryButtonText: #808080;
   --cardBg: #181818;
   --cardBorder: #383737;
+  --emailBoxBg: #131313;
 }
 
 .light {
@@ -26,6 +27,7 @@
   --secondaryButtonText: #181818;
   --cardBg: #f6f6f6;
   --cardBorder: #f6f6f6;
+  --emailBoxBg: #f6f6f6;
 }
 
 body {
@@ -52,6 +54,20 @@ button, .primary {
 button, .secondary {
   background: var(--secondaryButtonBg);
   color: var(--secondaryButtonText);
+}
+
+.custom-input {
+  background-color: var(--cardBg);
+  color: var(--secondaryButtonText)
+}
+
+.email-box {
+  background-color: var(--emailBoxBg);
+  border: 1px solid var(--cardBorder);
+}
+
+.input-label {
+  color: var(--subtitle)
 }
 
 .title {
