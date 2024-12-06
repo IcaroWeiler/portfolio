@@ -1,15 +1,23 @@
+# Use a imagem oficial do Node.js como base
 FROM node:18-alpine
 
+# Defina o diretório de trabalho
 WORKDIR /app
 
-# Instalar dependências e exportar o site
+# Copie o package.json e o package-lock.json
 COPY package.json package-lock.json ./
-RUN npm install --force
-COPY . .
-RUN npm run build && npm run export
 
-# Instalar o serve para servir os arquivos estáticos
+# Instale as dependências
+RUN npm install --force
+
+# Copie o restante dos arquivos do projeto
+COPY . .
+
+# Execute o build e exportação para uma aplicação estática
+RUN npm run build
+
+# Instale o serve (para servir a aplicação estática)
 RUN npm install --force -g serve
 
-# Rodar o servidor estático
+# Comando para servir a aplicação estática gerada na pasta 'out'
 CMD ["serve", "-s", "out", "-l", "3000"]
