@@ -1,4 +1,3 @@
-
 app = "seu-app-name"
 
 # Região onde a aplicação será implantada (substitua "iad" pela região de sua escolha)
