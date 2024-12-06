@@ -4,7 +4,7 @@ WORKDIR /app
 
 # Instalar dependências e exportar o site
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm install --force
 COPY . .
 RUN npm run build && npm run export
 
