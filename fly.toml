@@ -1,4 +1,4 @@
-app = "seu-app-name"
+app = "portfolio-upktkw"
 
 # Região onde a aplicação será implantada (substitua "iad" pela região de sua escolha)
 primary_region = "iad"
