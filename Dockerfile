@@ -1,21 +1,15 @@
-# Use uma imagem base adequada para o Node.js
 FROM node:18-alpine
 
-# Defina o diretório de trabalho na imagem
 WORKDIR /app
 
-# Copie os arquivos necessários
+# Instalar dependências e exportar o site
 COPY package.json package-lock.json ./
+RUN npm install
 COPY . .
+RUN npm run build && npm run export
 
-# Instale dependências com --force
-RUN npm install --force
+# Instalar o serve para servir os arquivos estáticos
+RUN npm install -g serve
 
-# Compile o projeto (se necessário)
-RUN npm run build
-
-# Exponha a porta que a aplicação usa
-EXPOSE 3000
-
-# Inicie o servidor
-CMD ["npm", "start"]
+# Rodar o servidor estático
+CMD ["serve", "-s", "out", "-l", "3000"]
