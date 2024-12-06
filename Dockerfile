@@ -1,9 +1,6 @@
 # Use uma imagem base adequada para o Node.js
 FROM node:18-alpine
 
-ARG RESEND_API_KEY
-ENV RESEND_API_KEY=$RESEND_API_KEY
-
 # Defina o diretório de trabalho na imagem
 WORKDIR /app
 
