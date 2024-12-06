@@ -1,28 +1,17 @@
-app = "portfolio-upktkw"
+# fly.toml - Configuração do Fly.io para uma aplicação Next.js em Docker
+app = "portfolio-upktkw" # Substitua pelo nome do seu app no Fly.io
 
-# Região onde a aplicação será implantada (substitua "iad" pela região de sua escolha)
-primary_region = "iad"
+kill_signal = "SIGINT"
+kill_timeout = 5
 
-# Definições da build
+[env]
+NODE_ENV = "production" # Ambiente de execução
+
 [build]
-dockerfile = "Dockerfile"
+dockerfile = "Dockerfile" # Nome do Dockerfile usado para o build
 
-# Configurações de deploy
-[deploy]
-release_command = "npm run build" # Comando opcional executado no deploy
-
-# Configurações de processos
-[processes]
-app = "npm start"
-
-# Configurações de volumes (caso sua aplicação use persistência)
-# [[mounts]]
-#   source = "data"
-#   destination = "/data"
-
-# Configurações de rede
 [[services]]
-internal_port = 3000 # Porta em que sua aplicação escuta
+internal_port = 3000 # Porta interna usada pela aplicação
 protocol = "tcp"
 
 [services.concurrency]
@@ -31,14 +20,15 @@ hard_limit = 25
 soft_limit = 20
 
 [[services.ports]]
-port = 80           # Porta pública
 handlers = ["http"]
+port = 80           # Porta pública para HTTP
 
 [[services.ports]]
-port = 443 # HTTPS (opcional)
+handlers = ["tls", "http"]
+port = 443                 # Porta pública para HTTPS
 
 [[services.tcp_checks]]
+grace_period = "1s"
 interval = "15s"
-timeout = "2s"
-grace_period = "1m"
 restart_limit = 0
+timeout = "2s"
