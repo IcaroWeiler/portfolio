@@ -1,3 +1,4 @@
+
 app = "seu-app-name"
 
 # Região onde a aplicação será implantada (substitua "iad" pela região de sua escolha)
@@ -5,15 +6,15 @@ primary_region = "iad"
 
 # Definições da build
 [build]
-  image = "node:18-alpine" # Substitua pela imagem base apropriada, se necessário
+dockerfile = "Dockerfile"
 
 # Configurações de deploy
 [deploy]
-  release_command = "npm run build" # Comando opcional executado no deploy
+release_command = "npm run build" # Comando opcional executado no deploy
 
 # Configurações de processos
 [processes]
-  app = "npm start"
+app = "npm start"
 
 # Configurações de volumes (caso sua aplicação use persistência)
 # [[mounts]]
@@ -22,23 +23,23 @@ primary_region = "iad"
 
 # Configurações de rede
 [[services]]
-  internal_port = 3000 # Porta em que sua aplicação escuta
-  protocol = "tcp"
+internal_port = 3000 # Porta em que sua aplicação escuta
+protocol = "tcp"
 
-  [services.concurrency]
-    type = "connections"
-    hard_limit = 25
-    soft_limit = 20
+[services.concurrency]
+type = "connections"
+hard_limit = 25
+soft_limit = 20
 
-  [[services.ports]]
-    port = 80 # Porta pública
-    handlers = ["http"]
+[[services.ports]]
+port = 80           # Porta pública
+handlers = ["http"]
 
-  [[services.ports]]
-    port = 443 # HTTPS (opcional)
+[[services.ports]]
+port = 443 # HTTPS (opcional)
 
-  [[services.tcp_checks]]
-    interval = "15s"
-    timeout = "2s"
-    grace_period = "1m"
-    restart_limit = 0
+[[services.tcp_checks]]
+interval = "15s"
+timeout = "2s"
+grace_period = "1m"
+restart_limit = 0
