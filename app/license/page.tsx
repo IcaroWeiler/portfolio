@@ -41,35 +41,38 @@ export default function License() {
   return (
     <div className="">
       <main className="">
-        <h1>About this website</h1>
-        {renderQuestions()}
-        <p className="text-[#808080] font-bold">
-          WHERE CAN I FIND THE DESIGN GUIDE?
-        </p>
-        <p
-          onClick={() =>
-            window.open(
-              "https://www.figma.com/community/file/1266863403759514317"
-            )
-          }
-          className="text-[#808080] underline cursor-pointer"
-        >
-          Here.
-        </p>
+        <h1 className="fade-in animate-delay-500">About this website</h1>
 
-        <span className="text-[#808080]">
-          This design is called Geist, was made by Eihab Khan and is licensed
-          under{" "}
-        </span>
+        <div className="fade-in animate-delay-1000">
+          {renderQuestions()}
+          <p className="text-[#808080] font-bold">
+            WHERE CAN I FIND THE DESIGN GUIDE?
+          </p>
+          <p
+            onClick={() =>
+              window.open(
+                "https://www.figma.com/community/file/1266863403759514317"
+              )
+            }
+            className="text-[#808080] underline cursor-pointer"
+          >
+            Here.
+          </p>
 
-        <span
-          onClick={() =>
-            window.open("https://creativecommons.org/licenses/by/4.0/")
-          }
-          className="text-[#808080] underline cursor-pointer"
-        >
-          CC BY 4.0 License.
-        </span>
+          <span className="text-[#808080]">
+            This design is called Geist, was made by Eihab Khan and is licensed
+            under{" "}
+          </span>
+
+          <span
+            onClick={() =>
+              window.open("https://creativecommons.org/licenses/by/4.0/")
+            }
+            className="text-[#808080] underline cursor-pointer"
+          >
+            CC BY 4.0 License.
+          </span>
+        </div>
       </main>
     </div>
   );

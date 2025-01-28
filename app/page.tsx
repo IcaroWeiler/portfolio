@@ -1,5 +1,6 @@
 "use client";
 import Button from "@/components/Button/button";
+import Link from "next/link";
 
 export default function Home() {
   const seeResume = () => {
@@ -29,9 +30,11 @@ export default function Home() {
         <Button type="primary" onClick={() => seeResume()}>
           See my resume
         </Button>
-        <Button type="primary" onClick={() => console.log("b")}>
-          Get in touch
-        </Button>
+        <Link href="/contact">
+          <Button type="primary" onClick={() => console.log("b")}>
+            Get in touch
+          </Button>
+        </Link>
       </div>
     </main>
   );

@@ -16,10 +16,10 @@ export default function Header() {
       label: "About",
     },
 
-    {
-      href: "/projects",
-      label: "Projects",
-    },
+    // {
+    //   href: "/projects",
+    //   label: "Projects",
+    // },
 
     {
       href: "/techStack",
